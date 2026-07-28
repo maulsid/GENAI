@@ -1,0 +1,64 @@
+# LLM Framework
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-text-splitters
+langchain-mistralai
+langchain_huggingface
+arxiv==2.1.0
+feedparser==6.0.12
+sgmllib3k==1.0.0
+
+# Embeddings
+sentence-transformers
+
+# Vector Databases
+faiss-cpu
+chromadb
+
+# Document Loaders
+pypdf
+pymupdf
+python-docx
+unstructured
+beautifulsoup4
+lxml
+
+# API
+fastapi
+uvicorn
+
+# Environment Variables
+python-dotenv
+
+# Tokenization
+tiktoken
+
+# Data Processing
+numpy
+pandas
+
+# HTTP
+requests
+httpx
+
+# AWS (if using Bedrock/S3)
+boto3
+
+# Logging
+loguru
+
+# Validation
+pydantic
+
+# Progress Bars
+tqdm
+
+# Optional OCR
+pytesseract
+Pillow
+
+# Utilities
+tenacity
+orjson
