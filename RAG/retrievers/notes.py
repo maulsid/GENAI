@@ -28,6 +28,11 @@
             # Goal is to balance 2 things:
             #     1. Relevance to the query
             #     2. Diversity among Retrieved documents
+
+Question: what if the combined size of answers is > retirvers?
+Answers: 
+1. Choose metadata filtering
+2. Choose top n then based on distance
  
  #WHATEVER U CAN INVOKE, U CAN CALL THEM RUNNABLES
  
