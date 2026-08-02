@@ -29,10 +29,12 @@
             #     1. Relevance to the query
             #     2. Diversity among Retrieved documents
 
-Question: what if the combined size of answers is > retirvers?
-Answers: 
-1. Choose metadata filtering
-2. Choose top n then based on distance
+# Question: what if the combined size of answers is > context window size?
+# Answers: 
+# 1.Choose metadata filtering
+# 2.Chunk prioritization-Choose top n then sort based on distance
+# 3.chunk summarization,give all answers to LLM,and ask to summarize in < 6000 tokesn. 
+# assuming context window is 6000. If its still more - do recursive summarization
  
  #WHATEVER U CAN INVOKE, U CAN CALL THEM RUNNABLES
  
