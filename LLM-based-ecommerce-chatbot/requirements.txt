@@ -1,0 +1,6 @@
+chromadb
+fastembed
+pandas
+semantic-router
+loadenv
+google-genai
