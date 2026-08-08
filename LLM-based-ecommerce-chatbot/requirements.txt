@@ -4,3 +4,4 @@ pandas
 semantic-router
 loadenv
 google-genai
+groq
