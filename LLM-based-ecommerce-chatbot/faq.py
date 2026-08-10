@@ -111,5 +111,5 @@ def faq_chain(user_query: str, top_k: int = TOP_K):
 
 
 if __name__ == "__main__":
-    context = faq_chain("what is your name")
-    print(context)
+    # context = faq_chain("what is your name")
+    print("in main")

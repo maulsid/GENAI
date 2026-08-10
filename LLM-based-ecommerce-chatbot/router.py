@@ -1,18 +1,17 @@
 from semantic_router import Route, SemanticRouter
 from semantic_router.encoders import FastEmbedEncoder
 
-# 1. Define routes
-politics = Route(
-    name="politics",
+# ---- 1. Define routes ----
+faq_route = Route(
+    name="faq",
     utterances=[
-        "who's the president of the country",
-        "what's the latest news on the election",
-        "what's the government's policy on healthcare",
-        "tell me about the senate vote",
+        "how do i track my order?",
+        "what is the refund policy",
+        "what if i dont like my order",
     ],
 )
 
-chitchat = Route(
+chitchat_route = Route(
     name="chitchat",
     utterances=[
         "how's the weather today",
@@ -22,7 +21,7 @@ chitchat = Route(
     ],
 )
 
-code_help = Route(
+code_help_route = Route(
     name="code_help",
     utterances=[
         "why is my python code throwing an error",
@@ -32,21 +31,15 @@ code_help = Route(
     ],
 )
 
-routes = [politics, chitchat, code_help]
+routes = [faq_route, chitchat_route, code_help_route]
 
-# 2. Local, free encoder
+# ---- 2. Local, free encoder ----
 encoder = FastEmbedEncoder(name="BAAI/bge-small-en-v1.5")
 
-# 3. Build the router — auto_sync forces the index to build before use
+# ---- 3. Build the router ----
 router = SemanticRouter(encoder=encoder, routes=routes, auto_sync="local")
 
-# 4. Route a query
-result = router("what do you think about the new tax policy?")
-print(result.name)
-
-result = router("what's up, how's it going?")
-print(result.name)
-
-result = router("what is python")
-print(result.name)
-
+# ---- 4. get_route — single entry point main.py calls ----
+def get_route(query: str) -> str | None:
+    result = router(query)
+    return result.name
