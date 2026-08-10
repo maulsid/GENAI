@@ -4,11 +4,12 @@ import chromadb.utils.embedding_functions as embedding_functions
 import pandas as pd
 import hashlib
 import json
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from config import CSV_PATH, CHROMA_DB_PATH, HASH_FILE, COLLECTION_NAME, TOP_K
+from config import CSV_PATH, CHROMA_DB_PATH, HASH_FILE, COLLECTION_NAME, TOP_K, GROQ_MODEL
 
 client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
 
@@ -22,6 +23,7 @@ collection = client.get_or_create_collection(
     embedding_function=embedding_fn,
 )
 
+groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def get_file_hash(path: str) -> str:
     with open(path, "rb") as f:
@@ -109,5 +111,5 @@ def faq_chain(user_query: str, top_k: int = TOP_K):
 
 
 if __name__ == "__main__":
-    context = faq_chain("how do i track my order")
+    context = faq_chain("what is your name")
     print(context)
