@@ -1,5 +1,6 @@
 from router import get_route
 from faq import faq_chain
+from sql import sql_chain
 
 def handle_query(query: str) -> str:
     route_name = get_route(query)
@@ -7,9 +8,8 @@ def handle_query(query: str) -> str:
     if route_name == "faq":
         return faq_chain(query)
 
-    elif route_name == "chitchat":
-        return "I'm just here to help with orders and FAQs — ask me about your order!"
-
+    elif route_name == "sql":
+        return sql_chain(query)
     elif route_name == "code_help":
         return "I can't help with coding questions — I'm an ecommerce support assistant."
 

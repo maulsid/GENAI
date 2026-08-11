@@ -11,13 +11,12 @@ faq_route = Route(
     ],
 )
 
-chitchat_route = Route(
-    name="chitchat",
+sql = Route(
+    name="sql",
     utterances=[
-        "how's the weather today",
-        "hi, how are you doing",
-        "tell me a joke",
-        "what's your favorite movie",
+        "I want to buy yoga mat with 50% discount",
+        "what is the price of workout shoes ",
+        "Are there any mens shoes available on sale?",
     ],
 )
 
@@ -31,7 +30,7 @@ code_help_route = Route(
     ],
 )
 
-routes = [faq_route, chitchat_route, code_help_route]
+routes = [faq_route, sql, code_help_route]
 
 # ---- 2. Local, free encoder ----
 encoder = FastEmbedEncoder(name="BAAI/bge-small-en-v1.5")
