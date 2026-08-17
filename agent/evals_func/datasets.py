@@ -20,7 +20,10 @@ examples = [
         "inputs": {"question": "What is the capital of India?"},
         "outputs": {"answer": "New Delhi"},
     },
-    {"inputs": {"question": "What is 2 + 2?"}, "outputs": {"answer": "4"}},
+    {    
+        "inputs": {"question": "What is 2 + 2?"}, 
+        "outputs": {"answer": "4"}
+    },
 ]
 
 client.create_examples(dataset_id=dataset.id, examples=examples)
